@@ -22,8 +22,8 @@ await build({
       registry: 'https://registry.npmjs.org/',
       scope: '@bjorkhaug',
     },
-    dependencies: {
-      '@bjorkhaug/sreflect': '^0.0.1',
+    peerDependencies: {
+      '@bjorkhaug/sreflect': '^0.0.2',
     },
     repository: {
       type: 'git',
