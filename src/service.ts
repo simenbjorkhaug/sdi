@@ -1,6 +1,4 @@
 // deno-lint-ignore-file ban-types no-explicit-any
-import 'npm:@bjorkhaug/sreflect@0.0.2'
-
 const ResolveDependencies = Symbol('resolve:dependencies')
 
 export class Container {

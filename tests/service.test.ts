@@ -1,5 +1,6 @@
 import { assert } from 'https://deno.land/std@0.206.0/assert/mod.ts'
 import { Container, Service } from '../mod.ts'
+import 'npm:@bjorkhaug/sreflect@0.0.2'
 
 Deno.test('Proove service injection capability', () => {
   @Service()
