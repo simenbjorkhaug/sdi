@@ -22,7 +22,6 @@ export class Container {
 
 export function Service() {
   return function (target: Object) {
-    console.log(Reflect.getMetadata('design:type', target))
     Reflect.defineMetadata('di:injectable', {
       dependencies: Reflect.getMetadata('design:paramtypes', target),
     }, target)
