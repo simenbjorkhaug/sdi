@@ -2,9 +2,9 @@
 const ResolveDependencies = Symbol('resolve:dependencies')
 
 export class Container {
-  static [ResolveDependencies](target: Object) {
+  static [ResolveDependencies]<T>(target: T): T {
     const { dependencies }: any =
-      Reflect.getMetadata('di:injectable', target) ?? {}
+      Reflect.getMetadata('di:injectable', target as Object) ?? {}
 
     if (dependencies) {
       return new (target as any)(...dependencies.map((dep: any) => {
@@ -15,7 +15,7 @@ export class Container {
     return new (target as any)()
   }
 
-  static get(target: Object) {
+  static get<T>(target: any): T {
     return Container[ResolveDependencies](target)
   }
 }

@@ -3,7 +3,6 @@ import { Container, Service } from '../mod.ts'
 import 'npm:@bjorkhaug/sreflect@0.0.2'
 
 Deno.test('Proove service injection capability', () => {
-  @Service()
   class _ServiceA {
     // Your service code here
     shouldBeTwo() {
@@ -17,7 +16,7 @@ Deno.test('Proove service injection capability', () => {
     // Your service code here
   }
 
-  const myServiceInstance = Container.get(ServiceB)
+  const myServiceInstance = Container.get<ServiceB>(ServiceB)
 
   assert(myServiceInstance.a.shouldBeTwo() === 2)
 })
